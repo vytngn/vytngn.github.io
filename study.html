@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" contant="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+
+        <!------------LINKS ------------->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!--Google Fonts Links-->
+
+        <!--signika-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+
+        <!--rubik-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Signika:wght@300..700&display=swap" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+
+    </head>
+<body>
+    <!-- Header Module -->
+       <header>
+           <!--Navigation Bar-->
+           <div class="header">
+               <!-- Your Name -->
+               <div class="name">Vy Nguyen</div>
+   
+               <!-- label is linked to checkbox for better rendering -->  
+               <label for="menu"></label>
+               <input type="checkbox" id="menu" />
+               
+               <ul class="nav">
+                 <li><a class="nav-item" href="index.html" id="home-link">Home</a></li>
+                 <li><a class="nav-item" href="about.html" id="about-link">About Me</a></li>
+                 <li><a class="nav-item" href="contact.html" id="contact-link">Contact</a></li>
+                 <li><a class="nav-item active" href="study.html" id="study-link">Study Buddy</a></li>
+               </ul>
+           </div>
+       </header>
+ 
+ <main class="main-study">
+   <!----------SIDE BAR: MEDIA MODULE--------------->
+   <div id="study-sidebar" class="sidebar collapsed">
+       <!-- Display current date and time -->
+        <div class="datetime">
+            <div id="current-date" class="date"></div>
+            <div id="current-time" class="time"></div>
+        </div>
+        <!-- Embed Spotify playlist -->
+        <div class="music">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4Ff2hafjE03OP3hwGKeW1w?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <!-- Toggle button to collapse/expand the sidebar -->
+        <div id="toggle-button" class="toggle-button">&lt;</div>
+   </div>
+
+   <!----------END SIDE BAR: STUDY MODULE > Pomodoro + Todo List -------------->
+   <div class="study-container">
+
+       <!--Pomodoro section -->
+       <div class="pomodoro-section">
+           <h1 class="title">Pomodoro Timer</h1>
+           <div class="timer-section">
+               <div class="tabs">
+                   <button class="tab-button active" data-tab="pomodoro">Pomodoro</button>
+                   <button class="tab-button" data-tab="short-break">Short Break</button>
+                   <button class="tab-button" data-tab="long-break">Long Break</button>
+               </div>
+               <div class="timer-wrapper">
+                   <p class="timer" id="timer">25:00</p>
+                   <div class="button-wrapper">
+                       <button id="start">Start</button>
+                       <button id="stop">Stop</button>
+                       <button id="reset">Reset</button>
+                   </div>
+               </div> 
+           </div>
+       </div>
+
+       <!--To do section -->
+       <div class="todo-section">
+           <h2 class="title">To Do List</h2>
+           <div id="new-task">
+               <input id="task-input" type="text" placeholder="Enter a new task">
+               <button id="add-button">Add Task</button>
+           </div>
+       
+           <div class="task-header">
+               <span>Tasks</span>
+               <div class="menu-icon">
+                   <!-- Menu icon content goes here -->
+                   <label for="menu-options-checkbox">&#8942</label>
+                   <input type="checkbox" class="menu-options-checkbox" id="menu-options-checkbox">
+                   <div class="menu-options">
+                       <button id="clear-button">Clear All</button>
+                   </div>
+               </div>
+           </div>
+         
+           <hr class="solid">
+         
+           <div class="task-list">
+               <ul id="todo-list"></ul>
+           </div>
+       </div>
+   </div>
+   
+ </main>
+ 
+ <!-- Footer Module -->
+ <footer>
+    <div class="footer">
+        <div class="right-section">
+        <a href="/index.html" class="logo"><img src="/assets/img/footer.png" alt="Logo"></a>
+        <p>Made with &#128154; by &copy; 2024 Vy Nguyen. <span>All rights reserved.</span></p>
+        </div>
+        
+        <div class="left-section">
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/tvy-nguyen" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/linkedin-1024.png" alt="LinkedIn"></a>
+            <a href="https://github.com/vytngn" target="_blank"><img src="https://cdn0.iconfinder.com/data/icons/eon-social-media-contact-info-2/32/github_coding_dev_developer-1024.png" alt="GitHub"></a>
+            <a href="mailto:vyvtnguyen@gmail.com" target="_blank"><img src="https://cdn0.iconfinder.com/data/icons/eon-social-media-contact-info-2/32/mail_email_e-mail_letter-1024.png" alt="Email"></a>
+        </div>
+        </div>
+    </div>
+ </footer>
+<script src="js/script.js"></script> 
+</body>
+</html>

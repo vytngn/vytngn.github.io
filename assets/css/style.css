@@ -1,0 +1,934 @@
+/* Import the 'Rubik' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+/* Reset default styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f1dc;
+    font-family: 'Rubik', sans-serif;
+    padding-top: 80px; /* Adjust to match header height */
+    min-height: 100vh; /* Ensure body is at least viewport height */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: space-between;
+
+}
+/* Set margin for paragraphs */
+p {
+  margin: 1em;
+}
+
+/* General link styling */
+a {
+  text-decoration: none; /* Remove underline by default */
+  color: inherit; /* Inherit the current color */
+}
+
+a:hover, a:active {
+  text-decoration: underline; /* Underline on hover or active state */
+  color: #5d4040; /* Change color on hover or active state */
+}
+
+a:visited {
+  color: inherit; /* Inherit the current color */
+  text-decoration: none; /* Remove underline */
+}
+
+
+
+
+/*---------------------------------NAV BAR: STYLE FOR HEADER--------------------------- */
+/* General style */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* General style : Style for the header bar */
+.header {
+  width: 100vw; /* Full width of the viewport */
+  height: 5em; /* Height of the header */
+  background-color: #294122; /* Background color of the header */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out children elements */
+  align-items: center; /* Center align items vertically */
+  padding: 10px 20px;
+  position: fixed; /* Relative positioning for absolute child elements */
+  border-bottom: 5px solid #79a37a;
+
+}
+
+/* Left section: Style for the name displayed in the header */
+.name {
+  color: #faf9eb; /* Text color */
+  font-size: 1.5em; /* Font size */
+}
+
+/* Right section: Style for the navigation links */
+
+/* Style for the label acting as the menu icon */
+.header > label {
+  display: none; /* Hide the menu icon by default */
+}
+
+/* Hide the checkbox used for toggling the menu */
+.header > input {
+  display: none;
+}
+
+
+/* Style for the navigation links */
+.header > .nav {
+  display: flex; /* Display as flexbox */
+  font-family: 'Rubik', sans-serif; /* Font family */
+  list-style: none;
+}
+
+.header > .nav > li {
+  display: inline-block; /* Display list items inline */
+  padding: 1em; /* Padding around the list items */
+}
+
+.header > .nav > li > a { 
+  color: #faf9eb; /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 1.2em;
+}
+
+/* Highlight the active nav link */
+.header > .nav > li > a.active,
+.header > .nav > li > a:hover {
+  font-weight: bold; /* Make text bold */
+  color: #E7882D; /* Highlight color */
+}
+
+/*------------------------------------FOOTER STYLE-----------------------------------------------------------------*/
+.footer {
+  background-color: rgba(231, 136, 45, 0.2);
+  width: 100%;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.footer .left-section, .footer .right-section {
+display: flex;
+align-items: center;
+}
+.left-section {
+justify-content: flex-start;
+}
+
+.right-section{
+justify-content: flex-end;
+}
+
+.logo img {
+  width: 40px; /* Adjust the size of the logo */
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.social-icons {
+  display: flex;            
+  justify-content: center; /* Centers icons horizontally */
+  align-items: center;     /* Centers icons vertically (optional) */
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 30px; /* Adjust the size of the icons */
+  height: 30px;
+}
+
+
+/**==================================================home.html=============================================**/
+/* Main content */
+.main-home {
+  flex: 1;
+  padding-top: 65px;
+}
+
+
+/* General container styling */
+.welcome-container {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    
+}
+
+/* Style for the welcome message section */
+.welcome-message {
+  flex: 1; /* Allow the text section to take up remaining space */
+  max-width: 650px; /* Limit width of the text section */
+  margin: 0 20px; /* Add some margin around the text */
+  text-align: left;
+  margin-left: 50px;
+}
+
+/* Style for the welcome image section */
+.welcome-image {
+  flex-shrink: 0; /* Prevent shrinking of the image */
+  margin-left: 50px; /* Add space between image and text */
+  margin-right: 20px;
+}
+
+/* Style for the image inside the welcome image section */
+.welcome-image img {
+  max-width: 80%; /* Ensure the image scales responsively */
+  height: auto; /* Maintain aspect ratio */
+  transition: max-width 0.3s ease;
+}
+
+/* Style for the main heading */
+.welcome-title {
+  font-family: 'Signika', sans-serif; /* Font for 'Hello,' */
+  font-size: 2.5em; /* Adjust the font size as needed */
+  letter-spacing: 1px;
+  color: #294122; /* Text color for 'Hello,' */
+  margin-left: 10px;
+  display: inline; /* Inline to keep next to highlight */
+    
+}
+
+/* Style for the highlighted text */
+.welcome-highlight {
+    font-family: 'Rubik', sans-serif; /* Different font for the highlight text */
+    font-size: 1.5em; /* Adjust the font size as needed */
+    color: #E7882D; /* Text color for the highlighted text */
+    display: inline; /* Inline to keep next to title */
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+/* Style for the paragraphs */
+.welcome-text {
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+
+
+
+/* Style for the button */
+.contact-button {
+  margin-top: 10px; /* Add margin on top of the button */
+  padding: 10px 20px; /* Add padding inside the button */
+  font-family: 'Rubik', sans-serif; /* Font family */
+  background-color: #E7882D; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 18px;
+  text-align: center; /* Center text inside the button */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make sure it displays correctly within the anchor tag */
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.contact-button:hover {
+  transform: translateY(-5px); /* Move the button up by 5px */
+  box-shadow: 5px 5px 2px 1px rgba(20, 44, 3, 0.312);
+  opacity: 1; /* Ensure full opacity on hover */
+}
+
+
+
+
+/**=================================================about.html================================================**/
+.main-about {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.about-text {
+    background-color: rgba(121, 163, 122, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ensure text is aligned to the left */
+    line-height: 30px;
+}
+
+
+.about-text h1 {
+    font-size: 2em;
+    color: #001107;
+    margin-bottom: 15px;
+  }
+  
+  .about-text h2 {
+    font-style: sans-serif;
+    font-size: 1em;
+    color: #2e2d34;
+    margin-top: 10px;
+    font-style: italic; 
+    padding-bottom: 10px;
+    
+  }
+  
+  /* Updated List Styling to Keep Bullet Points */
+  .about-text ul {
+    padding-left: 20px; /* Add padding to accommodate bullet points */ 
+  }
+  
+  .about-text li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .about-text li span {
+    font-weight: bold;
+  }
+  
+  /* Horizontal Rule Styling */
+  hr.solid {
+    height: 1px;
+    border: 2px solid rgba(231, 136, 45, 0.5);
+    margin: 30px 0;
+  }
+
+
+
+
+/**====================================contact.html======================================**/
+/* Main Contact Container */
+.main-contact {  /* Changed class name */
+    max-width: 1000px; /* Adjusted max-width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.get-in-touch > .contact-img {
+  background-color: rgba(231, 136, 45, 0.2);
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Get in Touch Section */
+.get-in-touch {
+    text-align: center;
+    padding: 40px 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.get-in-touch h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Social & Email Container */
+.social-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Social Icons */
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block; /* Make links inline-block for better spacing */
+}
+
+.social-icons img {
+    width: 32px; /* Adjust icon size as needed */
+    height: 32px;
+}
+
+/* Email Link */
+.email a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;  /* Adjust font size as needed */
+}
+
+/* Contact Form Section */
+.contact-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.contact-form h2 {
+    margin-bottom: 15px;
+}
+
+/* Form Input Fields */
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1em;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Added rounded corners */
+
+}
+
+.contact-form textarea {
+  height: 120px; /* Adjust textarea height as needed */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Submit Button */
+.contact-form button {
+  font-family: 'Rubik', sans-serif;
+  background-color: #E7882D; 
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+.contact-form button:hover {
+  opacity: 90%;
+  box-shadow: 5px 5px 2px 1px rgba(20, 44, 3, 0.312);
+  transform: translateY(-5px);
+}
+
+/**========================================study.html=============================================***/
+.sidebar {
+  width: 450px; /* Adjust the width of the sidebar */
+  background-color: #f4f4f4; /* Background color of the sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  position: fixed;
+  top: 80px; /* Align with the bottom of the header */
+  bottom: 80px; /* Align with the top of the footer */
+  transition: transform 0.3s ease;
+}
+
+/* Date and time container styling */
+.datetime {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Date display styling */
+.date {
+  text-align: left;
+}
+
+/* Time display styling */
+.time {
+  text-align: right;
+}
+
+/* Music section styling */
+.music {
+  width: 100%;
+  padding: 0;
+  margin-top: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+/* Toggle button styling */
+.toggle-button {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 20px;
+  height: 40px;
+  background-color: #111010;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: transform 0.3s ease;
+  transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+/* Collapsed state for the sidebar */
+.collapsed {
+  transform: translateX(-100%);
+}
+
+/* Adjust toggle button position when sidebar is collapsed */
+.collapsed .toggle-button {
+  transform: translateX(100%);
+  right: 0; /* adjust toggle button position*/
+}
+
+/* Content area styling / when the side bar is collapsed*/
+.study-container {
+  flex-grow: 1;
+  margin-left: 470px; 
+  padding: 30px;
+  overflow: auto;
+  transition: margin-left 0.3s ease;
+  margin: auto;
+  
+}
+
+/* Expand the content area when sidebar is open */
+.sidebar:not(.collapsed) + .study-container {
+  margin-left: 470px; /* Margin when sidebar is open */
+}
+
+
+/*-------------- General style for the Pomodoro section and To-Do List section-------------- */
+.pomodoro-section,
+.todo-section {
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 90%; /* Limit the max width */
+  margin: 20px auto; /* Center the sections and add vertical margin */
+  min-width: 300px; /* Minimum width for responsiveness */
+}
+
+/* Title Styling */
+.pomodoro-section .title,
+.todo-section .title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+  color: #294122; /* Match the color with header */
+}
+/*---------Pomodoro Section Styles----------------- */
+.pomodoro-section {
+  padding: 20px;
+  background-color: #ffffff82; /* Background color for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 90%; /* Limit the max width */
+  margin: 0 auto; /* Center the section */
+  min-width: 300px; /* Minimum width for responsiveness */
+}
+
+/* Title Styling */
+.pomodoro-section .title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+  color: #010101; /* Match the color with header */
+}
+
+/* Timer Section */
+.timer-section {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center content vertically */
+  height: 100%; /* Full height for centering */
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 1em;
+  background-color: rgb(97, 95, 95); /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #294122; /* Active tab background color */
+}
+
+
+
+/* Timer Display */
+.timer-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack timer and buttons vertically */
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  width: 100%; /* Ensure full width for centering */
+}
+
+
+.timer {
+  font-size: 4em;
+  margin: 20px 0; /* Adjust margins for better spacing */
+  font-weight: bold;
+  color: #294122; /* Timer text color */
+  text-align: center; /* Ensure the text is centered */
+}
+
+/* Button Wrapper */
+.button-wrapper {
+  display: flex;
+  flex-direction: row; /* Default row layout */
+  gap: 10px; /* Space between buttons */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center; /* Center buttons horizontally */
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #E7882D; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  transform: translateY(-3px); /* Move the button up slightly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+#start{
+  background-color: #086c35;
+}
+#stop{
+  background-color: #e72d2d;
+}
+#reset{
+  background-color: rgb(97, 95, 95);
+}
+
+/*---------To-Do List Styles----------------- */
+/* To-Do List Section Styles */
+.todo-section {
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 90%; /* Limit the max width */
+  margin: 0 auto 20px; /* Center the section and add bottom margin */
+  min-width: 300px; /* Minimum width for responsiveness */
+}
+
+.todo-section .title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+  color: #294122; /* Match the color with header */
+}
+
+#new-task {
+  display: flex;
+  justify-content: space-between; /* Ensure proper spacing between elements */
+  align-items: center;
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
+#task-input {
+  font-family: 'Rubik', san-serif;
+  font-size: 16px;
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#add-button, #clear-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  font-size: 1em;
+  margin-left: 10px; /* Add some space between the buttons */
+}
+
+#add-button {
+  background-color: #E7882D; /* Button background color */
+  font-weight: bold;
+}
+
+#add-button:hover {
+  background-color: #d6762b; /* Hover effect */
+  transform: translateY(-3px); /* Move the button up slightly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+#clear-button {
+  background-color: #dc3545; /* Red color */
+}
+
+#clear-button:hover {
+  background-color: #b02a37; /* Darker red on hover */
+  transform: translateY(-3px); /* Move the button up slightly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.task-header span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 30px; /* Increase font size for bolder appearance */
+  font-weight: 900; /* Make the font weight bolder */
+  cursor: pointer;
+  position: relative; /* For positioning the menu */
+}
+
+.menu-options-checkbox {
+  display: none; /* Hide the checkbox itself */
+}
+
+.menu-options {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 0; /* Adjust to position below the icon */
+  left: -110px;
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.menu-options button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-options-checkbox:checked + .menu-options {
+  display: block; /* Show menu options when checkbox is checked */
+  font-size: 12px;
+  text-align: center;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todo-list li {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center align items */
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#todo-list li.completed .task-item {
+  text-decoration: line-through;
+  color: #888;
+}
+
+#todo-list li .task-checkbox {
+  margin-right: 10px;
+}
+
+.delete-button {
+  margin-left: auto; /* Push the delete button to the far right */
+  background-color: #dc3545; /* Red color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.task-item {
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.task-name {
+  flex-grow: 1;
+}
+
+
+
+.hide {
+  display:none;
+}
+
+
+
+
+
+/**=============================================MEDIA QUERY===============================================**/
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  /* Show the hamburger menu icon */  
+  .header > label {
+    display: inline-block; /* Show the label */
+    width: 2em; /* Adjust the width */
+    height: 2em; /* Adjust the height */
+    background-image: url('https://cdn.iconfinder.com/stored_data/1812990/128/png?token=1722213379-u4ZKJAeULsCjvxa490MPl%2B89FNYgZHn0kRmAQeAFbak%3D'); /* Menu icon image */
+    background-size: contain; /* Contain the image within the label */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+  
+  /* Hide the navigation links */
+  .header > .nav {
+    display: none; /* Hide the navigation by default */
+  }
+  
+  /* Show the navigation menu when the menu icon is clicked */
+  .header > input:checked ~ .nav { 
+    display: block; /* Display the navigation */
+    width: 100%; /* Set width for the dropdown menu */
+    position: absolute; /* Position the menu absolutely */
+    top: 5em; /* Position below the header */
+    left: 0; /* Align to the left */
+    z-index: 100; /* Ensure it appears above other content */
+    list-style: none; /* Remove default list styling */
+    text-align: right; /* Center align text */
+    background-color: #294122; /* Background color of the menu */
+  }
+  
+  /* Show each menu item as a block in the dropdown menu */
+  .header > input:checked ~ .nav > li { 
+    display: block; /* Display list items as block */
+  }
+
+  
+  /* Display the name inside the dropdown menu */
+  .header > input:checked ~ .nav::after {
+    display: none; /* Hide the pseudo-element */
+  }
+
+
+  /* Media Query for Footer */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .right-section .logo {
+    margin-bottom: 10px; /* Adds space below the logo */
+  }
+  
+  .left-section, .right-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .right-section p span {
+    display: block;
+    margin-top: 10px; /* Optional: Adds space above the span */
+  }
+
+  .welcome-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .welcome-image {
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Add top margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .welcome-image img {
+    max-width: 70%; /* Resize the image gradually */
+  }
+
+  .main-about {
+      padding: 10px;  
+  }
+  
+  .about-text {
+      padding: 20px;
+  }
+}
+
+/* Media query for screens smaller than 400px */
+@media (max-width: 400px) {
+    .welcome-image img {
+        max-width: 60%; /* Further resize the image */
+    }
+}
+
+@media (max-width: 768px) {
+  .pomodoro-section {
+      padding: 15px; /* Reduce padding on smaller screens */
+  }
+  
+  .timer {
+      font-size: 3em; /* Adjust font size */
+  }
+}
+
+@media (max-width: 300px) {
+  .timer {
+      font-size: 2.5em; /* Further reduce font size */
+  }
+  
+  .button-wrapper {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 5px; /* Reduce gap */
+  }
+}
